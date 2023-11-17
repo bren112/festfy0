@@ -10,7 +10,7 @@ import { PiFileSql } from "react-icons/pi";
 
 function Sobre() {
   return (
-    <section>
+    <section className={styles.conteudo}>
       <div className={styles.sobremim}>
         <img src={avatar} alt="Minha imagem" />
         <div className={styles.descricao}>

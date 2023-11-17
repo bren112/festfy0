@@ -53,3 +53,61 @@ img {
   transition: all 1s;
   color: var(--red);
 }
+
+@media screen and (max-width: 790px) {
+  .sobremim {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 2rem;
+  }
+  img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+  }
+
+  .descricao {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .descricao span {
+    color: var(--red);
+    font-weight: bold;
+  }
+  .descricao strong {
+    color: var(--secondary);
+  }
+
+  .tecnologias {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50%;
+  }
+
+  .tecnologias h2 {
+    font-size: 2rem;
+    padding-block: 1rem;
+  }
+  .icons {
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  .icon {
+    font-size: 5rem;
+    color: var(--secondary);
+    transition: all 3s;
+  }
+  .icon:hover {
+    transition: all 1s;
+    color: var(--red);
+  }
+}

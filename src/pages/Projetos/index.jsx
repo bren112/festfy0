@@ -31,6 +31,7 @@ function Projetos() {
               name={projeto.name}
               description={projeto.description}
               html_url={projeto.html_url}
+              homepage={projeto.homepage}
             />
           );
         })}

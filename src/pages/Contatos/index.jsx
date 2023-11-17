@@ -1,6 +1,3 @@
-// import styles from './Contatos.module.css'
-
-import { Link } from "react-router-dom";
 import styles from "./Contatos.module.css";
 import { GoMail } from "react-icons/go";
 import { BsInstagram, BsGithub, BsLinkedin } from "react-icons/bs";
@@ -11,7 +8,13 @@ function Contatos() {
         <h2>Contatos</h2>
         <h3>Entre em Contato</h3>
         <p>
-          <Link to="">Para que possamos conversar mais sobre</Link>
+          <a
+            href="mailto:vitor.pro@outlook.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Para que possamos conversar mais sobre
+          </a>
         </p>
         <div className={styles.icons}>
           <a

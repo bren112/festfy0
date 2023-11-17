@@ -47,4 +47,9 @@ img {
 .icon {
   font-size: 4rem;
   color: var(--secondary);
+  transition: all 3s;
+}
+.icon:hover {
+  transition: all 1s;
+  color: var(--red);
 }

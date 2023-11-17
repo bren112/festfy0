@@ -4,7 +4,7 @@ import { FaCss3Alt } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io5";
 import { FaReact } from "react-icons/fa";
 // import { FaJava } from "react-icons/fa6";
-import { SiSpring } from "react-icons/si";
+// import { SiSpring } from "react-icons/si";
 // import { PiFileSql } from "react-icons/pi";
 import { BsArrowRight } from "react-icons/bs";
 // import { Link } from "react-router-dom";

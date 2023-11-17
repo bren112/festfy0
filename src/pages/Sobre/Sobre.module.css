@@ -1,29 +1,29 @@
 .sobremim {
-  padding-block: 3rem;
+  padding-block: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 4rem;
+  gap: 8rem;
 }
 img {
-  width: 350px;
-  height: 350px;
+  width: 300px;
+  height: 300px;
   border-radius: 50%;
 }
 .descricao {
   width: 35%;
-  font-size: 1.4rem;
+  font-size: 1rem;
 }
 .descricao p {
-  font-size: 1.3rem;
+  font-size: 1rem;
 }
 .descricao span {
   color: var(--red);
   font-weight: bold;
-  font-size: 1.8rem;
+  font-size: 1.4rem;
 }
 .descricao strong {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   color: var(--secondary);
 }
 
@@ -35,7 +35,7 @@ img {
 }
 
 .tecnologias h2 {
-  font-size: 3rem;
+  font-size: 2rem;
   padding-block: 2rem;
 }
 .icons {

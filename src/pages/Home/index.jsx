@@ -8,7 +8,7 @@ function Home() {
           <p>
             Olá, sou
             <br />
-            <span>Gabriel Nogueira</span>
+            <span>Vitor Silva</span>
             <br />
             Dev Full Stack
           </p>

@@ -11,7 +11,7 @@ function Header() {
   return (
     <header className={style.header}>
       <Link to="/">
-        <span>vitorsilva.dev </span>
+        <span>Festfy!</span>
       </Link>
       <nav
         onClick={toggleMenu}

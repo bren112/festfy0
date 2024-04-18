@@ -1,26 +1,27 @@
 import { Link } from "react-router-dom";
 import styles from "./Home.module.css";
+import img from './img.png'
 function Home() {
   return (
     <>
       <section className={styles.home}>
         <div className={styles.apresentacao}>
           <p>
-            Olá, sou
+            Cadastre
             <br />
-            <span>Vitor Silva</span>
+            <span>Sua Festa</span>
             <br />
-            Dev Full Stack
+            c/a gente!
           </p>
 
           <Link to="/sobre" className={`${styles.btn} ${styles.btn_red}`}>
-            Saiba mais sobre mim
+           Cadastre aqui
           </Link>
         </div>
         <figure>
           <img
             className={styles.img}
-            src="/developer-blue.svg"
+            src={img}
             alt="imagem de home"
           />
         </figure>

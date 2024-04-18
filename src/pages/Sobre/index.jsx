@@ -1,50 +1,71 @@
-import styles from "./Sobre.module.css";
-import avatar from "./images/eu.jpeg";
-import { FaHtml5 } from "react-icons/fa";
-import { FaCss3Alt } from "react-icons/fa";
-import { IoLogoJavascript } from "react-icons/io5";
-import { FaReact } from "react-icons/fa";
-import { FaJava } from "react-icons/fa6";
-import { SiSpring } from "react-icons/si";
-import { PiFileSql } from "react-icons/pi";
+import { useEffect, useState } from 'react';
+import { firebase, auth } from "./firebase";
+import './btn.css'
+export default function Sobre() {
+  const [user, setUser] = useState(null);
 
-function Sobre() {
-  return (
-    <section className={styles.conteudo}>
-      <div className={styles.sobremim}>
-        <img src={avatar} alt="Minha imagem" />
-        <div className={styles.descricao}>
-          <h2>Sobre</h2>
-          <p>
-            Sou <span>Vitor Silva</span>
-          </p>
-          <strong>Dev Full Stack</strong>
-          <br />
-          <br />
-          <p>Trabalho com desenvolvimento web desde 2015.</p>
-          <br />
-          <p>Sou apaixonado por transformar ideias em realidade digital.</p>
+  useEffect(() => {
+    auth.onAuthStateChanged(user => {
+      if (user) {
+        const { uid, displayName ,photoURL } = user;
+        if (!displayName)
+          throw new Error('O usuário não tem DisplayName ou photoUrl');
 
-          <br />
-          <p>
-            Especializado em criação de aplicações dinâmicas e intuitivas, com
-            foco na experiência do usuário.
-          </p>
+        setUser({
+          id: uid,
+          name: displayName,
+          avatar: photoURL
+        });
+      } else {
+        setUser(null); // Define o estado do usuário como null se não houver usuário logado
+      }
+    });
+  }, []);
+
+  const handleClickButtonLogin = async () => {
+    const provider = new firebase.auth.GoogleAuthProvider();
+    const result = await auth.signInWithPopup(provider);
+    console.log(result);
+  
+
+    if (result.user) {
+      const { uid, displayName , photoURL } = result.user;
+      if (!displayName)
+        throw new Error('O usuário não tem DisplayName ou photoUrl');
+
+      setUser({
+        id: uid,
+        name: displayName,
+        avatar: photoURL
+      });
+    }
+  }
+
+  const handleLogout = async () => {
+    await auth.signOut();
+    setUser(null); // Define o estado do usuário como null após o logout
+  };
+
+  let content;
+  if (user) {
+    content = (
+      <>
+        <div className='header'>
+        <p id='tagp'>{"Olá " + user.name + "!"}</p>
+        <img src={user.avatar} alt="Foto de perfil do usuário" id='avatar'/>
         </div>
-      </div>
-      <div className={styles.tecnologias}>
-        <h2>Techs</h2>
-        <div className={styles.icons}>
-          <FaHtml5 className={styles.icon} />
-          <FaCss3Alt className={styles.icon} />
-          <IoLogoJavascript className={styles.icon} />
-          <FaReact className={styles.icon} />
-          <FaJava className={styles.icon} />
-          <SiSpring className={styles.icon} />
-          <PiFileSql className={styles.icon} />
-        </div>
-      </div>
-    </section>
-  );
+
+
+        <button onClick={handleLogout}
+        className='login-with-google-btn'>
+        Logout</button>
+   
+      </>
+    );
+  } else {
+    content = <button onClick={handleClickButtonLogin} 
+    className='login-with-google-btn'>Login Google</button>;
+  }
+
+  return <>{content}</>;
 }
-export default Sobre;

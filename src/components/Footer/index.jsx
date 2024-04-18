@@ -2,7 +2,7 @@ import styles from "./Footer.module.css";
 function Footer(){
     return (
     <footer className={styles.footer}>
-        Feito com ❤ por Vitor Silva - &copy; 2023
+       brenoop.dev - &copy; 2024
     </footer>
     );
 }
